@@ -1,16 +1,19 @@
 #include <stdio.h>
-#include "personaje.h"
+#include "personaje.h" //Header hecho por el usuario
 
+//Funcion que captura y muestra los enteros
 void capturar_enteros()
 {
     int enteros[5];
     float promedio;
     int suma = 0;
 
+    printf("Escriba 5 numeros enteros a continuacion: \n");
     for(size_t i = 0; i<5; i++)
     {
         scanf("%i", &enteros[i]);
     }
+    printf("Numeros ingresados: \n");
     for(size_t i = 0; i<5; i++)
     {
         printf("%i\n", enteros[i]);
@@ -24,6 +27,8 @@ void capturar_enteros()
     printf("Promedio: %f\n", suma/5.0);
 }
 
+
+//Funcion que muestra la cadena ingresada
 void mostrar(int n, char cadena[])
 {
     for(size_t i=0; i< n; i++)
@@ -32,12 +37,14 @@ void mostrar(int n, char cadena[])
     }
 }
 
+//Funcion principal
 int main()
 {
     char op;
     char cadena[20];
     int n;
 
+    //Menu de opciones
     do
     {
         printf("1) Capturar enteros\n");
@@ -69,7 +76,8 @@ int main()
             default:
                 break;
         }
+        //Limpia la memoria de entrada
         fflush(stdin);
-    } while(op!=0);
+    } while(op!='0');
     return 0;
 }
